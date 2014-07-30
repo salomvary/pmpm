@@ -5,7 +5,8 @@ DEPENDENCIES=\
 			leaflet-custom\
 			require.js\
 			klass.js\
-			mocha
+			mocha,
+			roundup
 
 all: $(DEPENDENCIES)
 
@@ -13,6 +14,11 @@ clean:
 	rm -rf $(DEPENDENCIES)
 	rm -rf leaflet-src
 
+# A whole GitHub repo
+roundup:
+	mkdir -p $@
+	$(CURL) https://github.com/bmizerany/roundup/tarball/v0.0.5 | tar xf - --strip-components 1 -C $@
+	
 # zip file hosted somewhere on the internetz
 
 leaflet:
