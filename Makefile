@@ -5,7 +5,7 @@ DEPENDENCIES=\
 			leaflet-custom\
 			require.js\
 			klass.js\
-			mocha,
+			mocha\
 			roundup
 
 all: $(DEPENDENCIES)
