@@ -26,6 +26,12 @@ leaflet:
 	unzip -q $@.download.zip -d leaflet
 	rm $@.download.zip
 
+# Single file from a zip file
+Markdown.pl:
+	$(CURL) http://daringfireball.net/projects/downloads/Markdown_1.0.1.zip -o $@.download.zip
+	unzip -qj $@.download.zip Markdown_1.0.1/Markdown.pl
+	rm $@.download.zip
+
 # custom build from zip file
 
 leaflet-custom: leaflet-src
