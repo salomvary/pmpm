@@ -6,7 +6,8 @@ DEPENDENCIES=\
 			require.js\
 			klass.js\
 			mocha\
-			roundup
+			roundup\
+			Markdown.pl
 
 all: $(DEPENDENCIES)
 
