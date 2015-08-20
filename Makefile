@@ -7,7 +7,8 @@ DEPENDENCIES=\
 			klass.js\
 			mocha\
 			roundup\
-			Markdown.pl
+			Markdown.pl\
+			SBT
 
 all: $(DEPENDENCIES)
 
@@ -58,3 +59,14 @@ require.js:
 mocha:
 	mkdir -p $@
 	$(CURL) https://codeload.github.com/visionmedia/mocha/tar.gz/1.14.0|tar xf - --strip-components 1 -C $@
+
+# Scala SBT	
+SBT_VERSION=0.13.8
+
+sbt: sbt-$(SBT_VERSION)
+	ln -sf sbt-$(SBT_VERSION)/bin/sbt sbt
+	touch $@
+
+sbt-$(SBT_VERSION):
+	mkdir -p $@
+	curl -s -S -L https://dl.bintray.com/sbt/native-packages/sbt/$(SBT_VERSION)/sbt-$(SBT_VERSION).tgz | tar xf - --strip-components 1 -C $@
